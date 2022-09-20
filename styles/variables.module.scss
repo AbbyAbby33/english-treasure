@@ -1,0 +1,20 @@
+// 顏色
+$primary-color: #37505c;
+$blue-1-color: #7ea0b7;
+$blue-2-color: #2ec4b6;
+
+$success-color: #90be6d;
+$error-color: #ee6055;
+$warning-color: #ffd166;
+$background-1-color: #ffead0;
+
+/** 在typescript檔案可以取用 */
+:export {
+    primaryColor: $primary-color;
+    blue1Color: $blue-1-color;
+    blue2Color: $blue-2-color;
+    successColor: $success-color;
+    errorColor: $error-color;
+    warningColor: $warning-color;
+    background1Color: $background-1-color;
+}
