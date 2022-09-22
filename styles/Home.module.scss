@@ -1,0 +1,42 @@
+@import "./variables.module.scss";
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    svg {
+        font-size: 20px;
+        vertical-align: bottom;
+    }
+}
+
+.selectBar {
+    margin-bottom: 10px;
+
+    select {
+        margin-right: 6px;
+        background-color: #fff;
+        border: 1px solid $blue-1-color;
+        padding: 1px 3px;
+        option {
+            padding: 1px 3px;
+        }
+    }
+}
+
+.video-item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 6px;
+    h2 {
+        font-weight: bold;
+    }
+
+    .icon-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+}
