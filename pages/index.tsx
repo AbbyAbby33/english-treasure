@@ -5,6 +5,7 @@ import { IoIosBrush } from "react-icons/io";
 import { IoIosHeartEmpty } from "react-icons/io";
 // import { IoIosHeartHalf } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
+import Link from 'next/link';
 
 // Page：英文影片列表
 const Home: NextPage = () => {
@@ -48,16 +49,18 @@ const Home: NextPage = () => {
             <div>
                 {VIDEO_LIST.map((item) => {
                     return (
-                        <div className={styles["video-item"]} key={item.id}>
-                            <div>
-                                <h2>{item.englishName}</h2>
-                                <h3>{item.chineseName}</h3>
+                        <Link href={`/material?mid=${item.id}`} key={item.id}>
+                            <div className={styles["video-item"]}>
+                                <div>
+                                    <h2>{item.englishName}</h2>
+                                    <h3>{item.chineseName}</h3>
+                                </div>
+                                <div className={styles["icon-wrap"]}>
+                                    <span>{item.important ? <IoIosHeart /> : <IoIosHeartEmpty />}</span>
+                                    <span><IoIosBrush /></span>
+                                </div>
                             </div>
-                            <div className={styles["icon-wrap"]}>
-                                <span>{item.important ? <IoIosHeart /> : <IoIosHeartEmpty />}</span>
-                                <span><IoIosBrush /></span>
-                            </div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>
@@ -82,7 +85,7 @@ const Home: NextPage = () => {
                             <option value="01">餐飲</option>
                             <option value="02">心靈</option>
                             <option value="99">其他</option>
-                        </select>                        
+                        </select>
                     </form>
                 </div>
                 <div className={styles["dialog-button"]}>
