@@ -1,12 +1,19 @@
 // 顏色
 $primary-color: #37505c;
 $blue-1-color: #7ea0b7;
+$blue-1-color-hover: #5a809a;
 $blue-2-color: #2ec4b6;
 
 $success-color: #90be6d;
 $error-color: #ee6055;
 $warning-color: #ffd166;
 $background-1-color: #ffead0;
+
+$grey-1-color: #d8d8d8;
+$grey-2-color: #b3b3b3;
+$grey-3-color: #7a7a7a;
+$grey-4-color: #606060;
+$grey-5-color: #3b3b3b;
 
 /** 在typescript檔案可以取用 */
 :export {

@@ -1,4 +1,5 @@
 @import "./variables.module.scss";
+@import "./layout.module.scss";
 
 .title {
     display: flex;
@@ -38,5 +39,74 @@
     .icon-wrap {
         display: flex;
         flex-direction: column;
+    }
+}
+
+.dialog {
+    width: 100%;
+    min-height: 100px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: 1px solid #000;
+    text-align: center;
+
+    .dialog-title {
+        height: 40px;
+        line-height: 40px;
+        background-color: $primary-color;
+        color: #fff;
+    }
+    .dialog-body {
+        padding: 12px;
+        label {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 3px;
+        }
+        textarea, select {
+            width: 100%;
+            border: 1px solid $blue-1-color;
+            font-size: 16px;
+            margin-bottom: 10px;
+            &:focus {
+                outline: none;
+                border: 1px solid $blue-1-color-hover;
+            }
+        }
+        select {
+            padding: 3px;
+        }
+        .require {
+            color: $error-color;
+        }
+    }
+    .dialog-button {
+        padding-bottom: 12px;
+
+        button {
+            border: none;
+            padding: 3px 16px;
+            margin: 0 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            border-radius: 3px;
+
+            &.confirm-button {
+                background-color: $blue-1-color;
+                &:hover {
+                    background-color: $blue-1-color-hover;
+                }
+            }
+            &.cancel-button {
+                background-color: $grey-2-color;
+                &:hover {
+                    background-color: $grey-3-color;
+                }
+            }
+        }
     }
 }

@@ -15,11 +15,20 @@ const Home: NextPage = () => {
         { id: 'v0002', englishName: 'How does alcohol cause hangovers', chineseName: '酒精是如何造成宿醉的？', important: false }
     ];
 
+    const toggleDialog = (flag: boolean) => {
+        const dialog = document.getElementById('dialog') as HTMLDialogElement;
+        if (flag) {
+            if (dialog) dialog.showModal();
+        } else {
+            if (dialog) dialog.close();
+        }
+    }
+
     return (
         <div>
             <div className={styles.title}>
                 <h1>英文影片列表</h1>
-                <span><IoIosAddCircleOutline /></span>
+                <span onClick={() => toggleDialog(true)}><IoIosAddCircleOutline /></span>
             </div>
             {/* TODO: 客製化select */}
             <div className={styles.selectBar}>
@@ -52,6 +61,36 @@ const Home: NextPage = () => {
                     )
                 })}
             </div>
+            <dialog id="dialog" className={styles["dialog"]}>
+                <h1 className={styles["dialog-title"]}>新增英文影片</h1>
+                <div className={styles["dialog-body"]}>
+                    <form action="">
+                        <label htmlFor="">英文名稱<code className={styles.require}>*</code></label>
+                        <textarea name="" id="" rows={3}></textarea>
+                        <label htmlFor="">中文名稱<code className={styles.require}>*</code></label>
+                        <textarea name="" id="" rows={3}></textarea>
+                        <label htmlFor="">網址<code className={styles.require}>*</code></label>
+                        <textarea name="" id="" rows={3}></textarea>
+                        <label htmlFor="">來源<code className={styles.require}>*</code></label>
+                        <select name="" id="">
+                            <option value="01">Youtube</option>
+                            <option value="02">VoiceTube</option>
+                            <option value="99">其他</option>
+                        </select>
+                        <label htmlFor="">分類<code className={styles.require}>*</code></label>
+                        <select name="" id="">
+                            <option value="01">餐飲</option>
+                            <option value="02">心靈</option>
+                            <option value="99">其他</option>
+                        </select>                        
+                    </form>
+                </div>
+                <div className={styles["dialog-button"]}>
+                    <button type="button" className={styles["cancel-button"]} onClick={() => toggleDialog(false)}>取消</button>
+                    <button type="button" className={styles["confirm-button"]}>確定</button>
+                </div>
+                {/* <form method="dialog"></form> */}
+            </dialog>
         </div>
     )
 };
