@@ -1,19 +1,17 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.scss';
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { IoIosBrush } from "react-icons/io";
-import { IoIosHeartEmpty } from "react-icons/io";
-// import { IoIosHeartHalf } from "react-icons/io";
-import { IoIosHeart } from "react-icons/io";
 import Link from 'next/link';
+import MaterialTitle from '../components/materialTitle';
 
 // Page：英文影片列表
 const Home: NextPage = () => {
 
     const VIDEO_LIST = [
-        { id: 'v0000', englishName: '8 Habits to Help You Live Your Best Life', chineseName: '8個習慣幫你活出最好的人生', important: true },
-        { id: 'v0001', englishName: '2 critical misconceptions about happiness', chineseName: '什麼是幸福？關於幸福的二個重要誤解', important: false },
-        { id: 'v0002', englishName: 'How does alcohol cause hangovers', chineseName: '酒精是如何造成宿醉的？', important: false }
+        { id: 'v0001', englishName: 'Petty Cash Jar', chineseName: '零用現金罐', important: false },
+        { id: 'v0002', englishName: '8 Habits to Help You Live Your Best Life', chineseName: '8個習慣幫你活出最好的人生', important: true },
+        { id: 'v0003', englishName: '2 critical misconceptions about happiness', chineseName: '什麼是幸福？關於幸福的二個重要誤解', important: false },
+        { id: 'v0004', englishName: 'How does alcohol cause hangovers', chineseName: '酒精是如何造成宿醉的？', important: false }
     ];
 
     const toggleDialog = (flag: boolean) => {
@@ -50,15 +48,8 @@ const Home: NextPage = () => {
                 {VIDEO_LIST.map((item) => {
                     return (
                         <Link href={`/material?mid=${item.id}`} key={item.id}>
-                            <div className={styles["video-item"]}>
-                                <div>
-                                    <h2>{item.englishName}</h2>
-                                    <h3>{item.chineseName}</h3>
-                                </div>
-                                <div className={styles["icon-wrap"]}>
-                                    <span>{item.important ? <IoIosHeart /> : <IoIosHeartEmpty />}</span>
-                                    <span><IoIosBrush /></span>
-                                </div>
+                            <div>
+                                <MaterialTitle data={item}></MaterialTitle>
                             </div>
                         </Link>
                     )
