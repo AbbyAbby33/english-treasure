@@ -8,6 +8,11 @@
     line-height: 40px;
     font-size: 22px;
     font-family: 'Great Vibes'; // 沒有就吃預設字型就好
+    .back {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+    }
 }
 
 .main {
