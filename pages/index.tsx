@@ -26,11 +26,18 @@ const Home: NextPage = () => {
     return (
         <div>
             <div className={styles.title}>
-                <h1>英文影片列表</h1>
+                <h1>英文語料列表</h1>
                 <span onClick={() => toggleDialog(true)}><IoIosAddCircleOutline /></span>
             </div>
             {/* TODO: 客製化select */}
             <div className={styles.selectBar}>
+                <select name="" id="">
+                    <option value="">分類</option>
+                    <option value="01">影片</option>
+                    <option value="02">文章</option>
+                    <option value="03">整理</option>
+                    <option value="99">其他</option>
+                </select>
                 <select name="" id="">
                     <option value="">來源</option>
                     <option value="01">Youtube</option>
@@ -38,7 +45,7 @@ const Home: NextPage = () => {
                     <option value="99">其他</option>
                 </select>
                 <select name="" id="">
-                    <option value="">分類</option>
+                    <option value="">主題</option>
                     <option value="01">餐飲</option>
                     <option value="02">心靈</option>
                     <option value="99">其他</option>
