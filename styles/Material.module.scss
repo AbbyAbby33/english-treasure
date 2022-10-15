@@ -1,1 +1,42 @@
 @import "./variables.module.scss";
+
+.material-content {
+    border: 1px solid #000;
+    border-radius: 6px;
+
+    .material-item {
+        &:not(:last-child) {
+            border-bottom: 1px solid #000;
+        }
+        padding: 8px 8px 0;
+        font-size: 18px;
+        line-height: 24px;
+
+        // 1.單字
+        .material-word {
+            // background-color: yellow;
+            display: flex;
+            margin-bottom: 8px;
+            .description {
+                padding-left: 12px;
+            }
+        }
+
+        // 英文文字
+        .material-english {
+            background-color: $grey-1-color;
+            padding: 0 6px;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        // 中文文字
+        .material-chinese {
+            font-weight: bold;
+        }
+        .material-chinese-sentence {
+            @extend .material-chinese;
+            margin: 6px 0 6px;
+        }
+    }
+}
