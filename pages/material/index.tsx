@@ -3,6 +3,10 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import styles from '../../styles/Material.module.scss';
 import MaterialTitle from '../../components/materialTitle';
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { HiLink } from "react-icons/hi";
+import { HiVolumeUp } from "react-icons/hi";
+import { IoIosBrush } from "react-icons/io";
 
 const MaterialPage: NextPage = () => {
     const router = useRouter();
@@ -46,6 +50,16 @@ const MaterialPage: NextPage = () => {
     return (
         <>
             <MaterialTitle data={title}></MaterialTitle>
+            <div className={styles['operate-bar']}>
+                <div className={styles['operate-bar-left']}>
+                    <HiLink />
+                    <HiVolumeUp />
+                    <IoIosBrush />
+                </div>
+                <div>
+                    <IoIosAddCircleOutline />
+                </div>
+            </div>
             <div className={styles['material-content']}>
                 {dataList.map((item) => (
                     <div key={item.id} className={styles['material-item']}>
